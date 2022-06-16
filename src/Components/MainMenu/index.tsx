@@ -28,7 +28,7 @@ const MainMenu: React.FC<MainMenuProps> = () => {
             Новая игра
           </Button>
         </Link>
-        <Link to="/GameRules" className={style.linkWrap}>
+        <Link to="/Ss" className={style.linkWrap}>
           <Button variant="contained" className={style.button}>
             Правила
           </Button>
