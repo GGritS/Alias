@@ -1,11 +1,14 @@
 import { Box, Button } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import SettingsHeader from "../SettingsHeader";
+import SettingsHeader from "../../SettingsHeader";
 import style from "./CreateTeam.module.scss";
 import TeamNameBlock from "./TeamNameBlock";
 import AddIcon from "@mui/icons-material/Add";
-import { generateRandomNumber } from "../../Helpers/generateRandomNumber";
+import { generateRandomNumber } from "../../../Helpers/generateRandomNumber";
+import ManuallyRenameTeam from "./ManuallyRenameTeam";
+import NextPageBottomButton from "../../NextPageBottomButton";
+import ToCenterContent from "../../toCenterContent";
 
 interface CreateTeamProps {}
 
@@ -41,7 +44,9 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
   };
   const removeTeam = (index: number) => {
     if (usersTeamName.length <= 3) setMoreThanTwoTeams(false);
-    setTeamsData((prev) => [...prev, usersTeamName[index]]);
+    if (usersTeamName[index] !== "ещё одна команда")
+      setTeamsData((prev) => [...prev, usersTeamName[index]]);
+
     setUsersTeamName((prev) =>
       prev.filter((teamName, teamArrayIndex) => teamArrayIndex !== index)
     );
@@ -58,9 +63,7 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
           if (activeIndex === index) {
             setTeamsData((prev) => [...prev, activeName]);
             return (usersTeamName[activeIndex] = teamName);
-          }
-          // return
-          else return activeName;
+          } else return activeName;
         });
         setUsersTeamName(newActiveUsers);
       }
@@ -77,36 +80,31 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
   return (
     <Box className={style.wrapper}>
       <SettingsHeader headerPath="/">Команды</SettingsHeader>
-      <Box className={style.teamsNamesWrapper}>
-        <Box className={style.teamsNamesContent}>
-          {usersTeamName.map((item, index) => (
-            <div key={index}>
-              <TeamNameBlock
-                moreThanTwoTeams={moreThanTwoTeams}
-                removeTeam={removeTeam}
-                index={index}
-                automaticallyRenameTeam={automaticallyRenameTeam}
-                manuallyRenameTeam={manuallyRenameTeam}
-              >
-                {item}
-              </TeamNameBlock>
-            </div>
-          ))}
-          <Box className={style.addTeamBlock} onClick={addTeam}>
-            <AddIcon className={style.addTeamIcon} />
-          </Box>
+      <ToCenterContent>
+        {usersTeamName.map((item, index) => (
+          <div key={index}>
+            <TeamNameBlock
+              moreThanTwoTeams={moreThanTwoTeams}
+              removeTeam={removeTeam}
+              index={index}
+              automaticallyRenameTeam={automaticallyRenameTeam}
+              manuallyRenameTeam={manuallyRenameTeam}
+            >
+              {item}
+            </TeamNameBlock>
+          </div>
+        ))}
+        <Box className={style.addTeamBlock} onClick={addTeam}>
+          <AddIcon className={style.addTeamIcon} />
         </Box>
-      </Box>
-      <Box className={style.bottomAbsoluteWrap}>
+      </ToCenterContent>
+
+      <NextPageBottomButton path="/GameSettings" buttonText="Далее">
         <Box className={style.bottomInfoBlock}>
-          Для старта нужно две команды
+          Для изменения названия команды нажмите на него, для ввода названия
+          команды дважды нажмите на него
         </Box>
-        <Link to="/gameSettings" className={style.nextPageLink}>
-          <Button variant="contained" className={style.nextPageButton}>
-            Далее
-          </Button>
-        </Link>
-      </Box>
+      </NextPageBottomButton>
     </Box>
   );
 };

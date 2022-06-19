@@ -1,0 +1,59 @@
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+}
+
+.staticItems {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .headerText {
+    width: 50%;
+    font-size: 38px;
+    font-weight: 700;
+    color: rgb(102, 101, 101);
+  }
+  .pointsToWin {
+    display: flex;
+
+    .goalLogo {
+      font-size: 58px;
+      font-weight: 600;
+    }
+    .goalText {
+      font-weight: 600;
+      font-size: 44px;
+    }
+  }
+}
+
+.teamsWrapper {
+  margin-top: 5px;
+  max-height: 13vh;
+  overflow: auto;
+}
+
+.content {
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .roundText {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .readyText {
+    padding: 15px 0px;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .nextTeamText {
+    font-size: 26px;
+    font-weight: 800;
+    color: orange;
+  }
+}

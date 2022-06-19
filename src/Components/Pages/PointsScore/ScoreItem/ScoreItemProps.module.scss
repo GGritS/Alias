@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 15px 15px 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  .word {
+    font-size: 26px;
+  }
+  .likeIconBlock {
+    .likeIcon {
+      font-size: 30px;
+    }
+  }
+}

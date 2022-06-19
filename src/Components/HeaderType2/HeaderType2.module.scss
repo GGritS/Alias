@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  .content {
+    width: 50%;
+    padding: 10px 20px;
+    height: content;
+    height: 20vh;
+    max-height: 20vh;
+  }
+}

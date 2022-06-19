@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./MainMenu.module.scss";
-import mainMenuPicture from "./../../images/mainMenuPicture.jpeg";
+import mainMenuPicture from "./../../../images/mainMenuPicture.jpeg";
 
 interface MainMenuProps {}
 
@@ -28,7 +28,7 @@ const MainMenu: React.FC<MainMenuProps> = () => {
             Новая игра
           </Button>
         </Link>
-        <Link to="/Ss" className={style.linkWrap}>
+        <Link to="/Rules" className={style.linkWrap}>
           <Button variant="contained" className={style.button}>
             Правила
           </Button>
