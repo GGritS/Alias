@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { difficultyItem } from "..";
+import { DifficultyItem } from "..";
 import style from "./CategoryItem.module.scss";
 
 interface CategoryItemProps {
-  difficultyItem: difficultyItem;
+  difficultyItem: DifficultyItem;
 }
 
 const CategoryItem: React.FC<CategoryItemProps> = ({ difficultyItem }) => {

@@ -1,14 +1,12 @@
-import { Box, Button } from "@mui/material";
-import React, { useEffect, useMemo, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Box } from "@mui/material";
+import React, { useMemo, useState } from "react";
 import SettingsHeader from "../../SettingsHeader";
 import style from "./CreateTeam.module.scss";
 import TeamNameBlock from "./TeamNameBlock";
 import AddIcon from "@mui/icons-material/Add";
-import { generateRandomNumber } from "../../../Helpers/generateRandomNumber";
-import ManuallyRenameTeam from "./ManuallyRenameTeam";
 import NextPageBottomButton from "../../NextPageBottomButton";
 import ToCenterContent from "../../toCenterContent";
+import createTeamName from "./createTeamName";
 
 interface CreateTeamProps {}
 
@@ -23,27 +21,38 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
   const [usersTeamName, setUsersTeamName] = useState<StringArray[] | []>(() => [
     ...startTeams,
   ]);
-  const [moreThanTwoTeams, setMoreThanTwoTeams] = useState<boolean>(false);
 
-  const generateTeamName = () => {
-    if (!teamsData.length) return "ещё одна команда";
-    const randomNumber = generateRandomNumber(teamsData.length);
+  const isMoreThanTwoTeams = useMemo(
+    () => usersTeamName.length > 2,
+    [usersTeamName]
+  );
 
-    const teamName = teamsData[randomNumber];
-    setTeamsData((prev) =>
-      prev.filter((teamArrayName) => teamArrayName !== teamName)
-    );
+  // const generateTeamName = () => {
+  //   if (!teamsData.length) return "ещё одна команда";
+  //   const randomNumber = generateRandomNumber(teamsData.length);
 
-    return teamName;
-  };
+  //   const teamName = teamsData[randomNumber];
+
+  //   const filteredTeamNames = teamsData.filter(
+  //     (teamArrayName) => teamArrayName !== teamName
+  //   );
+
+  //   setTeamsData(filteredTeamNames);
+
+  //   return teamName;
+  // };
 
   const addTeam = () => {
-    if (usersTeamName.length >= 2) setMoreThanTwoTeams(true);
-    const teamName = generateTeamName();
-    setUsersTeamName((prevTeam) => [...prevTeam, teamName]);
+    const teamName = createTeamName({ teamsData });
+
+    const filteredTeamsData = teamsData.filter(
+      (teamData) => teamData !== teamName
+    );
+
+    setUsersTeamName(filteredTeamsData);
   };
+
   const removeTeam = (index: number) => {
-    if (usersTeamName.length <= 3) setMoreThanTwoTeams(false);
     if (usersTeamName[index] !== "ещё одна команда")
       setTeamsData((prev) => [...prev, usersTeamName[index]]);
 
@@ -56,9 +65,9 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
   const timer = 200;
 
   const automaticallyRenameTeam = (index: number) => {
-    setTimeout(() => {
+    const timerId = setTimeout(() => {
       if (!prevent) {
-        const teamName = generateTeamName();
+        const teamName = createTeamName({ teamsData });
         const newActiveUsers = usersTeamName.map((activeName, activeIndex) => {
           if (activeIndex === index) {
             setTeamsData((prev) => [...prev, activeName]);
@@ -68,6 +77,8 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
         setUsersTeamName(newActiveUsers);
       }
     }, timer);
+
+    return () => clearTimeout(timerId);
   };
   const manuallyRenameTeam = () => {
     prevent = true;
@@ -84,7 +95,7 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
         {usersTeamName.map((item, index) => (
           <div key={index}>
             <TeamNameBlock
-              moreThanTwoTeams={moreThanTwoTeams}
+              moreThanTwoTeams={isMoreThanTwoTeams}
               removeTeam={removeTeam}
               index={index}
               automaticallyRenameTeam={automaticallyRenameTeam}

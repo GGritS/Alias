@@ -6,7 +6,7 @@ import style from "./Category.module.scss";
 import CategoryItem from "./CategoryItem";
 
 interface CategoryProps {}
-export type difficultyItem = {
+export type DifficultyItem = {
   title: string;
   subTitle: string;
   exampleWords: string;
@@ -24,7 +24,7 @@ const words: string[] = [
   "лопата",
 ];
 
-const difficultyLevel: difficultyItem[] = [
+const difficultyLevel: DifficultyItem[] = [
   {
     title: "Быстрая игра",
     subTitle: "Легкий",
