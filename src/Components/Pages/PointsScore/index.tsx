@@ -1,8 +1,10 @@
 import { Box } from "@mui/material";
-import React from "react";
-import HeaderType2 from "../../HeaderType2";
-import NextPageBottomButton from "../../NextPageBottomButton";
-import ToCenterContent from "../../toCenterContent";
+import React, { useEffect, useState } from "react";
+
+import { useGameContext } from "../../../Contexts/GameContext/GameContextProvider";
+import HeaderType2 from "../../Modules/HeaderType2";
+import NextPageBottomButton from "../../Modules/NextPageBottomButton";
+import ToCenterContent from "../../Modules/toCenterContent";
 import TeamItem from "../TeamRating/TeamItem";
 
 import style from "./PointsScore.module.scss";
@@ -10,16 +12,61 @@ import ScoreItem from "./ScoreItem";
 
 interface PointsScoreProps {}
 
-const guessedWords = [
-  { word: "slovo", isGuessed: true },
-  { word: "slovo2", isGuessed: false },
-  { word: "slovo3", isGuessed: true },
-  { word: "slovo4", isGuessed: false },
-  { word: "slovo5", isGuessed: false },
-  { word: "slovo6", isGuessed: true },
-];
-
 const PointsScore: React.FC<PointsScoreProps> = () => {
+  const {
+    guessedWords,
+    gameSettings,
+    guessedWordCount,
+    notGuessedWordCount,
+    activeTeam,
+    handleEndRound,
+    endGame,
+    teams,
+  } = useGameContext();
+
+  const [score, setScore] = useState(0);
+
+  const [nextPageLink, setNextPageLink] = useState("/TeamRating");
+
+  useEffect(() => {
+    const activeTeamIndex = teams.findIndex(
+      (team) => activeTeam === team.teamName
+    );
+    if (
+      teams[activeTeamIndex].score + score >=
+      gameSettings.numberOfWordsToWin
+    ) {
+      setNextPageLink("/WinPage");
+    } else setNextPageLink("/TeamRating");
+  });
+
+  const countTheScore = (thePresenceOfFine: boolean) => {
+    if (!thePresenceOfFine) {
+      setScore(guessedWordCount);
+      return guessedWordCount;
+    } else {
+      setScore(guessedWordCount - notGuessedWordCount);
+      return guessedWordCount - notGuessedWordCount;
+    }
+  };
+
+  useEffect(() => {
+    countTheScore(gameSettings.penaltyForMissingAWord);
+  });
+
+  const submitForm = () => {
+    const activeTeamIndex = teams.findIndex(
+      (team) => activeTeam === team.teamName
+    );
+    if (
+      teams[activeTeamIndex].score + score >=
+      gameSettings.numberOfWordsToWin
+    ) {
+      endGame(score);
+    } else {
+      handleEndRound(score);
+    }
+  };
   return (
     <Box className={style.wrapper}>
       <HeaderType2>
@@ -27,7 +74,7 @@ const PointsScore: React.FC<PointsScoreProps> = () => {
           <Box className={style.headerText}>Набранные очки</Box>
         </Box>
         <Box className={style.teamsWrapper}>
-          <TeamItem teamName="test" teamScore={3} />
+          <TeamItem teamName={activeTeam} teamScore={score} />
         </Box>
       </HeaderType2>
       <ToCenterContent>
@@ -37,13 +84,18 @@ const PointsScore: React.FC<PointsScoreProps> = () => {
               <ScoreItem
                 word={scoreItem.word}
                 isGuessed={scoreItem.isGuessed}
+                index={scoreIndex}
               />
             </div>
           ))}
         </Box>
       </ToCenterContent>
 
-      <NextPageBottomButton path="/TeamRating" buttonText="Продолжить" />
+      <NextPageBottomButton
+        path={nextPageLink}
+        buttonText="Продолжить"
+        onClick={submitForm}
+      />
     </Box>
   );
 };

@@ -1,5 +1,6 @@
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
+  height: content;
   width: 100%;
   background-color: rgb(221, 221, 221);
   display: flex;
@@ -37,7 +38,8 @@
 }
 
 .content {
-  height: 65vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,3 +59,125 @@
     color: orange;
   }
 }
+
+// //******TV******//
+// @media (min-width: 1201px) {
+// }
+// //*********************//
+
+// //******DeskTop******//
+// @media screen and (min-width: 1024px) and (max-width: 1200px) {
+// }
+// //*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .staticItems {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    .headerText {
+      width: 50%;
+      font-size: 38px;
+      font-weight: 700;
+      color: rgb(102, 101, 101);
+    }
+    .pointsToWin {
+      display: flex;
+
+      .goalLogo {
+        font-size: 58px;
+        font-weight: 600;
+      }
+      .goalText {
+        font-weight: 600;
+        font-size: 44px;
+      }
+    }
+  }
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .staticItems {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    .headerText {
+      width: 50%;
+      font-size: 38px;
+      font-weight: 700;
+      color: rgb(102, 101, 101);
+    }
+    .pointsToWin {
+      display: flex;
+
+      .goalLogo {
+        font-size: 58px;
+        font-weight: 600;
+      }
+      .goalText {
+        font-weight: 600;
+        font-size: 44px;
+      }
+    }
+  }
+}
+//*********************//
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .staticItems {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .headerText {
+      width: 50%;
+      font-size: 38px;
+      font-weight: 700;
+      color: rgb(102, 101, 101);
+    }
+    .pointsToWin {
+      display: flex;
+
+      .goalLogo {
+        font-size: 58px;
+        font-weight: 600;
+      }
+      .goalText {
+        font-weight: 600;
+        font-size: 44px;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .roundText {
+      text-align: center;
+
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .readyText {
+      padding: 15px 0px;
+      font-size: 12px;
+      font-weight: 300;
+    }
+    .nextTeamText {
+      text-align: center;
+
+      font-size: 22px;
+      font-weight: 800;
+      color: orange;
+    }
+  }
+}
+//*********************//

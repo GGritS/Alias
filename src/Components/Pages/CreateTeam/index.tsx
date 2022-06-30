@@ -1,12 +1,13 @@
 import { Box } from "@mui/material";
 import React, { useMemo, useState } from "react";
-import SettingsHeader from "../../SettingsHeader";
+import HeaderType1 from "../../Modules/HeaderType1";
 import style from "./CreateTeam.module.scss";
-import TeamNameBlock from "./TeamNameBlock";
+import TeamNameItem from "./TeamNameItem";
 import AddIcon from "@mui/icons-material/Add";
-import NextPageBottomButton from "../../NextPageBottomButton";
-import ToCenterContent from "../../toCenterContent";
-import createTeamName from "./createTeamName";
+import { generateRandomNumber } from "../../../Helpers/generateRandomNumber";
+import NextPageBottomButton from "../../Modules/NextPageBottomButton";
+import ToCenterContent from "../../Modules/toCenterContent";
+import { useGameContext } from "../../../Contexts/GameContext/GameContextProvider";
 
 interface CreateTeamProps {}
 
@@ -16,6 +17,8 @@ const namesData = ["team1", "team2"];
 const startTeams = ["start team1", "start team2"];
 
 const CreateTeam: React.FC<CreateTeamProps> = () => {
+  const { handleSubmitTeams } = useGameContext();
+
   const [teamsData, setTeamsData] = useState([...namesData]);
 
   const [usersTeamName, setUsersTeamName] = useState<StringArray[] | []>(() => [
@@ -27,32 +30,23 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
     [usersTeamName]
   );
 
-  // const generateTeamName = () => {
-  //   if (!teamsData.length) return "ещё одна команда";
-  //   const randomNumber = generateRandomNumber(teamsData.length);
+  const generateTeamName = () => {
+    if (!teamsData.length) return "ещё одна команда";
+    const randomNumber = generateRandomNumber(teamsData.length);
 
-  //   const teamName = teamsData[randomNumber];
-
-  //   const filteredTeamNames = teamsData.filter(
-  //     (teamArrayName) => teamArrayName !== teamName
-  //   );
-
-  //   setTeamsData(filteredTeamNames);
-
-  //   return teamName;
-  // };
-
-  const addTeam = () => {
-    const teamName = createTeamName({ teamsData });
-
-    const filteredTeamsData = teamsData.filter(
-      (teamData) => teamData !== teamName
+    const teamName = teamsData[randomNumber];
+    setTeamsData((prev) =>
+      prev.filter((teamArrayName) => teamArrayName !== teamName)
     );
 
-    setUsersTeamName(filteredTeamsData);
+    return teamName;
   };
 
-  const removeTeam = (index: number) => {
+  const handleAddTeam = () => {
+    const teamName = generateTeamName();
+    setUsersTeamName((prevTeam) => [...prevTeam, teamName]);
+  };
+  const handleRemoveTeam = (index: number) => {
     if (usersTeamName[index] !== "ещё одна команда")
       setTeamsData((prev) => [...prev, usersTeamName[index]]);
 
@@ -67,7 +61,7 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
   const automaticallyRenameTeam = (index: number) => {
     const timerId = setTimeout(() => {
       if (!prevent) {
-        const teamName = createTeamName({ teamsData });
+        const teamName = generateTeamName();
         const newActiveUsers = usersTeamName.map((activeName, activeIndex) => {
           if (activeIndex === index) {
             setTeamsData((prev) => [...prev, activeName]);
@@ -88,32 +82,39 @@ const CreateTeam: React.FC<CreateTeamProps> = () => {
     }, timer);
   };
 
+  const handleSubmitForm = () => {
+    handleSubmitTeams(usersTeamName);
+  };
+
   return (
     <Box className={style.wrapper}>
-      <SettingsHeader headerPath="/">Команды</SettingsHeader>
+      <HeaderType1 headerPath="/">Команды</HeaderType1>
       <ToCenterContent>
         {usersTeamName.map((item, index) => (
           <div key={index}>
-            <TeamNameBlock
+            <TeamNameItem
               moreThanTwoTeams={isMoreThanTwoTeams}
-              removeTeam={removeTeam}
+              removeTeam={handleRemoveTeam}
               index={index}
               automaticallyRenameTeam={automaticallyRenameTeam}
               manuallyRenameTeam={manuallyRenameTeam}
             >
               {item}
-            </TeamNameBlock>
+            </TeamNameItem>
           </div>
         ))}
-        <Box className={style.addTeamBlock} onClick={addTeam}>
+        <Box className={style.addTeamBlock} onClick={handleAddTeam}>
           <AddIcon className={style.addTeamIcon} />
         </Box>
       </ToCenterContent>
 
-      <NextPageBottomButton path="/GameSettings" buttonText="Далее">
+      <NextPageBottomButton
+        path="/GameSettings"
+        buttonText="Далее"
+        onClick={handleSubmitForm}
+      >
         <Box className={style.bottomInfoBlock}>
-          Для изменения названия команды нажмите на него, для ввода названия
-          команды дважды нажмите на него
+          Для изменения названия команды нажмите на него.
         </Box>
       </NextPageBottomButton>
     </Box>

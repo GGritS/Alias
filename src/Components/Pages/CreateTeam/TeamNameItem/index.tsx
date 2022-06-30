@@ -3,7 +3,7 @@ import React from "react";
 import style from "./TeamNameBlock.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 
-interface TeamNameBlockProps {
+interface TeamNameItemProps {
   children: React.ReactNode;
   index: number;
   moreThanTwoTeams: boolean;
@@ -12,7 +12,7 @@ interface TeamNameBlockProps {
   manuallyRenameTeam: () => void;
 }
 
-const TeamNameBlock: React.FC<TeamNameBlockProps> = ({
+const TeamNameItem: React.FC<TeamNameItemProps> = ({
   children,
   index,
   moreThanTwoTeams,
@@ -40,4 +40,4 @@ const TeamNameBlock: React.FC<TeamNameBlockProps> = ({
   );
 };
 
-export default TeamNameBlock;
+export default TeamNameItem;

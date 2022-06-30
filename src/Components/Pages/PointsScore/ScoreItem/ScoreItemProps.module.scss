@@ -8,6 +8,11 @@
   .likeIconBlock {
     .likeIcon {
       font-size: 30px;
+      color: orange;
+    }
+    .dislikeIcon {
+      transform: rotate(180deg);
+      font-size: 30px;
     }
   }
 }

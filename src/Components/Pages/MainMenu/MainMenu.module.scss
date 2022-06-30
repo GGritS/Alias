@@ -52,7 +52,143 @@
 
 .button {
   border-radius: 10px;
-  background-color: orange;
   width: 50vw;
   height: 10vh;
 }
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .logoBlockWrap {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+    bottom: -26px;
+    left: 0;
+  }
+  .logoBlocText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    border-radius: 700px;
+    padding: 30px 15px;
+  }
+
+  .button {
+    border-radius: 10px;
+    width: 50vw;
+    height: 8vh;
+  }
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .logoBlockWrap {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+    bottom: -30px;
+    left: 0;
+  }
+  .logoBlocText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    border-radius: 700px;
+    padding: 40px 25px;
+  }
+
+  .button {
+    border-radius: 10px;
+    width: 50vw;
+    height: 8vh;
+  }
+}
+//*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .logoBlockWrap {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+    bottom: -30px;
+    left: 0;
+  }
+  .logoBlocText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    border-radius: 700px;
+    padding: 40px 25px;
+  }
+
+  .button {
+    border-radius: 10px;
+    width: 50vw;
+    height: 8vh;
+  }
+}
+//*********************//
+
+//******DeskTop******//
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .logoBlocText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 44px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    border-radius: 700px;
+    padding: 30px 10px;
+  }
+
+  .button {
+    border-radius: 10px;
+    width: 50vw;
+    height: 8vh;
+  }
+}
+//*********************//
+
+//******TV******//
+@media (min-width: 1201px) {
+  .logoBlocText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 44px;
+    font-weight: 600;
+    color: white;
+    background-color: orange;
+    border-radius: 700px;
+    padding: 30px 10px;
+  }
+
+  .button {
+    border-radius: 10px;
+    width: 50vw;
+    height: 10vh;
+  }
+}
+//*********************//

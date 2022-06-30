@@ -1,0 +1,739 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(221, 221, 221);
+}
+
+.startGameBtn {
+  position: absolute;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: royalblue;
+  font-size: 46px;
+  font-size: 600;
+
+  width: 450px;
+  height: 450px;
+  border-radius: 450px;
+  z-index: 2;
+}
+
+.content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  background-color: orange;
+
+  height: 15vh;
+  width: 100%;
+
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  padding-bottom: 10px;
+  color: white;
+  .teamName {
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  flex-grow: 3;
+  width: 100%;
+  position: relative;
+}
+
+.wordsWrapper {
+  position: absolute;
+  .wordContent {
+    width: 450px - 160px;
+    height: 450px - 160px;
+    cursor: pointer;
+
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.answersBlock {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  .correctAnswer {
+    background-color: #00ff00;
+    height: 50%;
+  }
+  .wrongAnswer {
+    background-color: red;
+    height: 50%;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  padding-top: 10px;
+
+  background-color: gray;
+
+  height: 15vh;
+  width: 100%;
+
+  border-top-left-radius: 80%;
+  border-top-right-radius: 80%;
+  .timerWrapper {
+    width: 30%;
+    height: 40px;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.headerAndFooterText {
+  font-size: 26px;
+  font-weight: 600;
+}
+.wordsCount {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+//******TV******//
+@media (min-width: 1201px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+  }
+
+  .startGameBtn {
+    position: absolute;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: royalblue;
+    font-size: 46px;
+    font-size: 600;
+
+    width: 350px;
+    height: 350px;
+    border-radius: 450px;
+    z-index: 2;
+  }
+
+  .content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+
+    background-color: orange;
+
+    height: 15vh;
+    width: 100%;
+
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-bottom: 10px;
+    color: white;
+    .teamName {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    flex-grow: 3;
+    width: 100%;
+    position: relative;
+  }
+
+  .wordsWrapper {
+    position: absolute;
+    .wordContent {
+      width: 350px - 100px;
+      height: 350px - 100px;
+      cursor: pointer;
+
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid black;
+
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .answersBlock {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .correctAnswer {
+      background-color: #00ff00;
+      height: 50%;
+    }
+    .wrongAnswer {
+      background-color: red;
+      height: 50%;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-top: 10px;
+
+    background-color: gray;
+
+    height: 15vh;
+    width: 100%;
+
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    .timerWrapper {
+      width: 30%;
+      height: 40px;
+      display: flex;
+      background-color: white;
+      border-radius: 20px;
+      border: 1px solid black;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .headerAndFooterText {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .wordsCount {
+    font-size: 34px;
+    font-weight: 800;
+  }
+}
+//*********************//
+
+//******DeskTop******//
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+  }
+
+  .startGameBtn {
+    position: absolute;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: royalblue;
+    font-size: 34px;
+    font-size: 600;
+
+    width: 350px;
+    height: 350px;
+    border-radius: 450px;
+    z-index: 2;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+
+    background-color: orange;
+
+    height: 15vh;
+    width: 100%;
+
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-bottom: 10px;
+    color: white;
+    .teamName {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    flex-grow: 3;
+    width: 100%;
+    position: relative;
+  }
+
+  .wordsWrapper {
+    position: absolute;
+    .wordContent {
+      width: 260px;
+      height: 260px;
+      cursor: pointer;
+
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid black;
+
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .answersBlock {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .correctAnswer {
+      background-color: #00ff00;
+      height: 50%;
+    }
+    .wrongAnswer {
+      background-color: red;
+      height: 50%;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-top: 10px;
+
+    background-color: gray;
+
+    height: 15vh;
+    width: 100%;
+
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    .timerWrapper {
+      width: 30%;
+      height: content;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .headerAndFooterText {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .wordsCount {
+    font-size: 34px;
+    font-weight: 800;
+  }
+}
+//*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+  }
+
+  .startGameBtn {
+    position: absolute;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: royalblue;
+    font-size: 34px;
+    font-size: 600;
+
+    width: 350px;
+    height: 350px;
+    border-radius: 450px;
+    z-index: 2;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+
+    background-color: orange;
+
+    height: 15vh;
+    width: 100%;
+
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-bottom: 10px;
+    color: white;
+    .teamName {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    flex-grow: 3;
+    width: 100%;
+    position: relative;
+  }
+
+  .wordsWrapper {
+    position: absolute;
+    .wordContent {
+      width: 260px;
+      height: 260px;
+      cursor: pointer;
+
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid black;
+
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .answersBlock {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .correctAnswer {
+      background-color: #00ff00;
+      height: 50%;
+    }
+    .wrongAnswer {
+      background-color: red;
+      height: 50%;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-top: 10px;
+
+    background-color: gray;
+
+    height: 15vh;
+    width: 100%;
+
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    .timerWrapper {
+      width: 30%;
+      height: 40px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .headerAndFooterText {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .wordsCount {
+    font-size: 34px;
+    font-weight: 800;
+  }
+}
+//*********************//
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(221, 221, 221);
+  }
+
+  .startGameBtn {
+    position: absolute;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: royalblue;
+    font-size: 34px;
+    font-size: 600;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 450px;
+    z-index: 2;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+
+    background-color: orange;
+
+    height: 15vh;
+    width: 100%;
+
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-bottom: 10px;
+    color: white;
+    .teamName {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    flex-grow: 3;
+    width: 100%;
+    position: relative;
+  }
+
+  .wordsWrapper {
+    position: absolute;
+    .wordContent {
+      width: 230px;
+      height: 230px;
+      cursor: pointer;
+
+      border-radius: 50%;
+      background-color: white;
+      border: 1px solid black;
+
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .answersBlock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .correctAnswer {
+      background-color: #00ff00;
+      height: 50%;
+    }
+    .wrongAnswer {
+      background-color: red;
+      height: 50%;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    padding-top: 10px;
+
+    background-color: gray;
+
+    height: 15vh;
+    width: 100%;
+
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    .timerWrapper {
+      width: 30%;
+      height: 40px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .headerAndFooterText {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .wordsCount {
+    font-size: 34px;
+    font-weight: 800;
+  }
+}
+//*********************//

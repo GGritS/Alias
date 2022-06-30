@@ -1,0 +1,104 @@
+//******TV******//
+@media (min-width: 1201px) {
+  .wrapper {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    .content {
+      width: 50%;
+      padding: 10px 20px;
+      min-height: 8vh;
+      height: content;
+      max-height: 20vh;
+    }
+  }
+}
+//*********************//
+
+//******DeskTop******//
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    .content {
+      width: 50%;
+      padding: 10px 20px;
+      min-height: 8vh;
+      height: content;
+      max-height: 20vh;
+    }
+  }
+}
+//*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    .content {
+      width: 50%;
+      padding: 10px 20px;
+      min-height: 8vh;
+      height: content;
+      max-height: 40vh;
+    }
+  }
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    .content {
+      width: 50%;
+      padding: 10px 20px;
+      min-height: 8vh;
+      height: content;
+      max-height: 40vh;
+    }
+  }
+}
+//*********************//
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    width: 100%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    .content {
+      width: 50%;
+      padding: 10px 20px;
+      min-height: 8vh;
+      height: content;
+      max-height: 40vh;
+    }
+  }
+}
+//*********************//

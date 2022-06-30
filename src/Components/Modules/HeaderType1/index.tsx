@@ -5,15 +5,12 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import style from "./SettingsHeader.module.scss";
 import { Link } from "react-router-dom";
 
-interface SettingsHeaderProps {
+interface HeaderType1Props {
   children: React.ReactNode;
   headerPath: string;
 }
 
-const SettingsHeader: React.FC<SettingsHeaderProps> = ({
-  children,
-  headerPath,
-}) => {
+const HeaderType1: React.FC<HeaderType1Props> = ({ children, headerPath }) => {
   return (
     <Box className={style.header}>
       <Box className={style.headerContent}>
@@ -26,4 +23,4 @@ const SettingsHeader: React.FC<SettingsHeaderProps> = ({
   );
 };
 
-export default SettingsHeader;
+export default HeaderType1;

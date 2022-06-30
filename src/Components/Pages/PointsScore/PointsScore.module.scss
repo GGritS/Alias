@@ -2,6 +2,8 @@
   height: 100vh;
   width: 100%;
   background-color: rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
 }
 
 .staticItems {
@@ -17,6 +19,7 @@
 }
 
 .content {
-  height: 67vh;
+  height: content;
+  max-height: 67vh;
   overflow: auto;
 }

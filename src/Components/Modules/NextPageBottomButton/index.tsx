@@ -8,15 +8,22 @@ interface NextPageBottomButtonProps {
   children?: React.ReactNode;
   buttonText: string;
   path: string;
-  onSubmit?: (index?: string) => void;
+  onClick?: () => void;
 }
 
-const NextPageBottomButton: React.FC<NextPageBottomButtonProps> = (props) => {
-  const { children, buttonText, path, onSubmit } = props;
+const noop = () => {};
+
+const NextPageBottomButton: React.FC<NextPageBottomButtonProps> = ({
+  children,
+  buttonText,
+  path,
+  onClick = noop,
+}) => {
   return (
-    <Box className={style.bottomAbsoluteWrap}>
+    <Box className={style.wrapper}>
       {children}
-      <Link to={path} className={style.nextPageLink}>
+
+      <Link to={path} className={style.nextPageLink} onClick={onClick}>
         <Button variant="contained" className={style.nextPageButton}>
           {buttonText}
         </Button>

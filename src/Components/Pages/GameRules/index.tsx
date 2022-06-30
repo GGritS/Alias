@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
-import SettingsHeader from "../../SettingsHeader";
-import ToCenterContent from "../../toCenterContent";
+import HeaderType1 from "../../Modules/HeaderType1";
+import ToCenterContent from "../../Modules/toCenterContent";
 import style from "./GameRules.module.scss";
 
 interface GameRulesProps {}
@@ -10,7 +10,7 @@ const GameRules: React.FC<GameRulesProps> = () => {
   const rules = ["", "", "", ""];
   return (
     <Box className={style.wrapper}>
-      <SettingsHeader headerPath="/">Правила</SettingsHeader>
+      <HeaderType1 headerPath="/">Правила</HeaderType1>
       <ToCenterContent>
         <Box className={style.logoWrap}>
           <Box className={style.logo}>Alias</Box>
