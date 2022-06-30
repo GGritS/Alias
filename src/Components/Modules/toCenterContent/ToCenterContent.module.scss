@@ -1,0 +1,103 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  z-index: 10;
+
+  .content {
+    height: 100%;
+    width: 50%;
+    height: auto;
+  }
+}
+
+//******TV******//
+@media (min-width: 1201px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    z-index: 10;
+
+    .content {
+      height: 100%;
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+//*********************//
+
+//******DeskTop******//
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    z-index: 10;
+
+    .content {
+      height: 100%;
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+//*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    z-index: 10;
+
+    .content {
+      height: 100%;
+      width: 50%;
+      height: auto;
+    }
+  }
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    z-index: 10;
+
+    .content {
+      height: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+//*********************//
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    z-index: 10;
+
+    .content {
+      height: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+//*********************//

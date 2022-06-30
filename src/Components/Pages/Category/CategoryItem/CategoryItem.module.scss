@@ -1,0 +1,42 @@
+.wrapper {
+  background-color: rgb(238, 247, 255);
+
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  margin-bottom: 3px;
+}
+
+.categoryHeader {
+  width: 100%;
+  .title {
+    font-size: 22px;
+    color: orange;
+    font-weight: 600;
+  }
+  .subTitle {
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.categoryContent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  .exampleWords {
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+  }
+  .wordCount {
+    font-size: 30px;
+    font-weight: 800;
+    color: gray;
+  }
+}

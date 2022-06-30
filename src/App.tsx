@@ -1,14 +1,14 @@
-import React from "react";
-import MainMenu from "./Components/MainMenu";
-import { Routes, Route, Link } from "react-router-dom";
+
+import Root from "./Components/Root";
+import { GameContextProvider } from "./Contexts/GameContext/GameContextProvider";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<MainMenu />} />
-      </Routes>
-    </div>
+    <>
+      <GameContextProvider>
+        <Root />
+      </GameContextProvider>
+    </>
   );
 }
 

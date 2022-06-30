@@ -1,0 +1,15 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  .teamName {
+    width: 85%;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .teamScore {
+    font-size: 28px;
+    font-weight: 600;
+  }
+}

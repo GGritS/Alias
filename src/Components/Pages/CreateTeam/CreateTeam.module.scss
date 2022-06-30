@@ -1,0 +1,35 @@
+$largeScreenFontSize: 50px;
+$pcFontSize: 34px;
+$tabletsFontSize: 28px;
+$mobileFontSize: 20px;
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  max-height: content;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+}
+
+.addTeamBlock {
+  margin-bottom: 10px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  .addTeamIcon {
+    padding: 10px 0px;
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+  }
+}
+
+.bottomInfoBlock {
+  margin-bottom: 25px;
+  color: black;
+  width: 40%;
+  text-align: center;
+}

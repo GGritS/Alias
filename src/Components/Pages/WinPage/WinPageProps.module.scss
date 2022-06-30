@@ -1,0 +1,369 @@
+//******TV******//
+@media (min-width: 1201px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../../images/winBackground.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 50%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .winnerBlockWrap {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    .winTeamName {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .teamsBlock {
+    margin-top: 10px;
+    width: 50%;
+    height: 34vh;
+    max-height: 34vh;
+    overflow: auto;
+  }
+
+  .teamItem {
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .losingTeamName {
+      width: 80%;
+    }
+  }
+
+  .playMoreLinkBlock {
+    margin-top: 10px;
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    .playMoreLink {
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    &:hover {
+      background-color: rgb(52, 86, 190);
+      transition-duration: 0.4s;
+    }
+  }
+}
+//*********************//
+
+//******DeskTop******//
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../../images/winBackground.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 50%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .winnerBlockWrap {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    .winTeamName {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .teamsBlock {
+    margin-top: 10px;
+    width: 50%;
+    height: 34vh;
+    max-height: 34vh;
+    overflow: auto;
+  }
+
+  .teamItem {
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .losingTeamName {
+      width: 80%;
+    }
+  }
+
+  .playMoreLinkBlock {
+    margin-top: 10px;
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    .playMoreLink {
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    &:hover {
+      background-color: rgb(52, 86, 190);
+      transition-duration: 0.4s;
+    }
+  }
+}
+//*********************//
+
+//******Laptops******//
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../../images/winBackground.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .winnerBlockWrap {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    .winTeamName {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .teamsBlock {
+    margin-top: 10px;
+    width: 90%;
+    height: 45vh;
+    max-height: 50vh;
+    overflow: auto;
+  }
+
+  .teamItem {
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .losingTeamName {
+      width: 80%;
+    }
+  }
+
+  .playMoreLinkBlock {
+    margin-top: 10px;
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    .playMoreLink {
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    &:hover {
+      background-color: rgb(52, 86, 190);
+      transition-duration: 0.4s;
+    }
+  }
+}
+//*********************//
+
+//******Tablets******//
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../../images/winBackground.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .winnerBlockWrap {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    .winTeamName {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .teamsBlock {
+    margin-top: 10px;
+    width: 90%;
+    height: 34vh;
+    max-height: 34vh;
+    overflow: auto;
+  }
+
+  .teamItem {
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .losingTeamName {
+      width: 80%;
+    }
+  }
+
+  .playMoreLinkBlock {
+    margin-top: 10px;
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    .playMoreLink {
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    &:hover {
+      background-color: rgb(52, 86, 190);
+      transition-duration: 0.4s;
+    }
+  }
+}
+//*********************//
+
+//******Mobile******//
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./../../../images/winBackground.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .content {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .winnerBlockWrap {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    .winTeamName {
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+  }
+
+  .teamsBlock {
+    margin-top: 10px;
+    width: 90%;
+    height: 34vh;
+    max-height: 34vh;
+    overflow: auto;
+  }
+
+  .teamItem {
+    margin-bottom: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .losingTeamName {
+      width: 80%;
+    }
+  }
+
+  .playMoreLinkBlock {
+    margin-top: 10px;
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    .playMoreLink {
+      font-size: 26px;
+      text-decoration: none;
+      color: black;
+    }
+    &:hover {
+      background-color: rgb(52, 86, 190);
+      transition-duration: 0.4s;
+    }
+  }
+}
+//*********************//
